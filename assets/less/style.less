@@ -341,10 +341,10 @@ body {
                     button {
                         background-color: transparent;
                         border: none;
-                        padding: 22px 20px 20px 20px;
-                        text-align: left;
-                        position: relative;
                         cursor: pointer;
+                        padding: 22px 20px 20px 20px;
+                        position: relative;
+                        text-align: left;
                         width: 100%;
                         &::before {
                             background-image: url("../images/forum_icon.svg");
@@ -441,9 +441,9 @@ body {
             height: 25px;
             padding: 6px 0px;
             text-align: center;
+            text-transform: uppercase;
             vertical-align: top;
             width: 25px;
-            text-transform: uppercase;
         }
         .topic_profile {
             margin: 6px 0px 0px 10px;
@@ -473,22 +473,22 @@ body {
             margin: 30px auto 0px auto;
             overflow-y: scroll;
             padding: 40px 84px 40px 84px;
-            width: 1066px;
             position: relative;
+            width: 1066px;
             #close_modal_btn {
-                width: 15px;
-                height: 15px;
-                display: inline-block;
-                vertical-align: top;
-                background-image: url("../images/close_btn.svg");
                 background-color: transparent;
+                background-image: url("../images/close_btn.svg");
                 border: none;
-                opacity: 0.5;
-                transition: 0.21s;
                 cursor: pointer;
+                display: inline-block;
+                height: 15px;
+                opacity: 0.5;
                 position: absolute;
-                top: 40px;
                 right: 40px;
+                top: 40px;
+                transition: 0.21s;
+                vertical-align: top;
+                width: 15px;
                 &:hover {
                     opacity: 1;
                 }
@@ -523,8 +523,11 @@ body {
                     &:last-child {
                         margin: 0px;
                     }
-                    .forum_info {
+                    .forum_info, .response_info {
                         background-color: #2C2D34;
+                        color: #6d7186;
+                        display: block;
+                        font: 14px/16px robotoRegular, sans-serif;
                         position: relative;
                         &::after {
                             background-color: #3F404A;
@@ -537,10 +540,20 @@ body {
                             vertical-align: top;
                             width: 100%;
                         }
-                        .profile_initial, .topic_profile {
+                        .profile_initial {
+                            background-color: #ffd34f;
+                            border-radius: 50%;
+                            color: #1E1F25;
+                            display: inline-block;
+                            font: 11px/16px robotoMedium, sans-serif;
+                            height: 25px;
+                            padding: 6px 0px;
                             position: relative;
+                            text-align: center;
+                            text-transform: uppercase;
+                            vertical-align: top;
+                            width: 25px;
                             z-index: 2;
-                            text-transform: capitalize;
                         }
                         .topic_profile {
                             background-color: #2C2D34;
@@ -548,7 +561,9 @@ body {
                             margin: 6px 0px 0px 0px;
                             padding-right: 10px;
                             padding: 0px 10px;
+                            position: relative;
                             vertical-align: top;
+                            z-index: 2;
                         }
                     }
                     p {

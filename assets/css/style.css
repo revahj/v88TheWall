@@ -331,10 +331,10 @@ body {
 #wrapper #forum_dashboard #forum_content_container > ul > li button {
   background-color: transparent;
   border: none;
-  padding: 22px 20px 20px 20px;
-  text-align: left;
-  position: relative;
   cursor: pointer;
+  padding: 22px 20px 20px 20px;
+  position: relative;
+  text-align: left;
   width: 100%;
 }
 #wrapper #forum_dashboard #forum_content_container > ul > li button::before {
@@ -427,9 +427,9 @@ body {
   height: 25px;
   padding: 6px 0px;
   text-align: center;
+  text-transform: uppercase;
   vertical-align: top;
   width: 25px;
-  text-transform: uppercase;
 }
 #wrapper .forum_info .topic_profile {
   margin: 6px 0px 0px 10px;
@@ -459,23 +459,23 @@ body {
   margin: 30px auto 0px auto;
   overflow-y: scroll;
   padding: 40px 84px 40px 84px;
-  width: 1066px;
   position: relative;
+  width: 1066px;
 }
 #wrapper #forum_modal .forum_modal_content #close_modal_btn {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-  vertical-align: top;
-  background-image: url("../images/close_btn.svg");
   background-color: transparent;
+  background-image: url("../images/close_btn.svg");
   border: none;
-  opacity: 0.5;
-  transition: 0.21s;
   cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  opacity: 0.5;
   position: absolute;
-  top: 40px;
   right: 40px;
+  top: 40px;
+  transition: 0.21s;
+  vertical-align: top;
+  width: 15px;
 }
 #wrapper #forum_modal .forum_modal_content #close_modal_btn:hover {
   opacity: 1;
@@ -512,11 +512,16 @@ body {
 #wrapper #forum_modal .forum_modal_content > ul > li:last-child {
   margin: 0px;
 }
-#wrapper #forum_modal .forum_modal_content > ul > li .forum_info {
+#wrapper #forum_modal .forum_modal_content > ul > li .forum_info,
+#wrapper #forum_modal .forum_modal_content > ul > li .response_info {
   background-color: #2C2D34;
+  color: #6d7186;
+  display: block;
+  font: 14px/16px robotoRegular, sans-serif;
   position: relative;
 }
-#wrapper #forum_modal .forum_modal_content > ul > li .forum_info::after {
+#wrapper #forum_modal .forum_modal_content > ul > li .forum_info::after,
+#wrapper #forum_modal .forum_modal_content > ul > li .response_info::after {
   background-color: #3F404A;
   content: "";
   display: inline-block;
@@ -528,18 +533,31 @@ body {
   width: 100%;
 }
 #wrapper #forum_modal .forum_modal_content > ul > li .forum_info .profile_initial,
-#wrapper #forum_modal .forum_modal_content > ul > li .forum_info .topic_profile {
+#wrapper #forum_modal .forum_modal_content > ul > li .response_info .profile_initial {
+  background-color: #ffd34f;
+  border-radius: 50%;
+  color: #1E1F25;
+  display: inline-block;
+  font: 11px/16px robotoMedium, sans-serif;
+  height: 25px;
+  padding: 6px 0px;
   position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: top;
+  width: 25px;
   z-index: 2;
-  text-transform: capitalize;
 }
-#wrapper #forum_modal .forum_modal_content > ul > li .forum_info .topic_profile {
+#wrapper #forum_modal .forum_modal_content > ul > li .forum_info .topic_profile,
+#wrapper #forum_modal .forum_modal_content > ul > li .response_info .topic_profile {
   background-color: #2C2D34;
   display: inline-block;
   margin: 6px 0px 0px 0px;
   padding-right: 10px;
   padding: 0px 10px;
+  position: relative;
   vertical-align: top;
+  z-index: 2;
 }
 #wrapper #forum_modal .forum_modal_content > ul > li p {
   color: #9496a1;

@@ -13,7 +13,7 @@
         <div id="signup_container" class="signup_login_container">
             <h2>Welcome</h2>
             <h3>Register a new account.</h3>
-            <form action="submit" id="signup_form">
+            <form id="signup_form">
                 <div class="input_container">
                     <label for="first_name_input">First Name</label>
                     <input type="text" id="first_name_input" class="signup_input"> 
@@ -34,7 +34,7 @@
         <div id="login_container" class="signup_login_container hidden">
             <h2>Welcome</h2>
             <h3>Login your account.</h3>
-            <form action="submit" id="login_form">
+            <form id="login_form">
                 <label for="email_login_input">Email</label>
                 <input type="text" id="email_login_input" class="login_input">
                 <label for="password_login_input">Password</label>
@@ -56,7 +56,7 @@
             <div id="forum_content_container">
                 <h2>Goodmorning <span class="profile_greeting">Jhaver,</span></h2>
                 <p>Welcome to V88 Forum Dashboard</p>
-                <form action="submit" id="forum_post_form" class="post_form">
+                <form id="forum_post_form" class="post_form">
                     <span class="login_profile_initials">JG</span>
                     <textarea name="topic_textarea" id="topic_textarea" placeholder="Post your topic..."></textarea>
                     <button type="submit">Post</button>
@@ -73,57 +73,28 @@
                     <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
                 </span>
                 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</h2>
-                <form action="submit" id="response_form" class="post_form">
+                <form id="response_form" class="post_form">
                     <span class="login_profile_initials">JG</span>
                     <textarea name="forum_textarea" id="forum_textarea" placeholder="Post your topic..."></textarea>
                     <button type="submit" id="submit_response_form">Post</button>
                 </form>
                 <h3>Responses (10)</h3>
-                <ul id="forum_reponse_list">
-                    <li class="forum_reponse_item">
-                        <span class="forum_info">
-                            <span class="profile_initial">JG</span>
-                            <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                        </span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-                    </li>
-                    <li class="forum_reponse_item">
-                        <span class="forum_info">
-                            <span class="profile_initial">JG</span>
-                            <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                        </span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-                    </li>
-                    <li class="forum_reponse_item">
-                        <span class="forum_info">
-                            <span class="profile_initial">JG</span>
-                            <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                        </span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-                    </li>
-                    <li class="forum_reponse_item">
-                        <span class="forum_info">
-                            <span class="profile_initial">JG</span>
-                            <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                        </span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-                    </li>
-                    <li class="forum_reponse_item">
-                        <span class="forum_info">
-                            <span class="profile_initial">JG</span>
-                            <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                        </span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-                    </li>
-                </ul>
+                <ul id="forum_reponse_list"></ul>
             </div>
         </div>
         <ul id="clone_container" class="hidden">
             <li class="forum_topic_item">
-                <button type="button" class="open_topic_btn" onclick="toShowForumModal()">
+                <button type="button" class="open_topic_btn" onclick="toShowForumModal(this.id)">
                     <p></p> 
                     <span class="forum_info"><span class="profile_initial"></span><span class="topic_profile"></span><span class="response_info"></span></span>
                 </button>
+            </li>
+            <li class="forum_reponse_item">
+                <span class="response_info">
+                    <span class="profile_initial">JG</span>
+                    <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
+                </span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
             </li>
         </ul>
     </div>
