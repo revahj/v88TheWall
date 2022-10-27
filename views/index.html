@@ -67,6 +67,7 @@
         </div>
         <div id="forum_modal" class="hidden">
             <div class="forum_modal_content">
+                <button id="close_modal_btn"></button>
                 <span class="forum_info">
                     <span class="profile_initial">JG</span>
                     <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
@@ -119,8 +120,10 @@
         </div>
         <ul id="clone_container" class="hidden">
             <li class="forum_topic_item">
-                <p></p> 
-                <span class="forum_info"><span class="profile_initial"></span><span class="topic_profile"></span><span class="response_info"></span></span>
+                <button type="button" class="open_topic_btn" onclick="toShowForumModal()">
+                    <p></p> 
+                    <span class="forum_info"><span class="profile_initial"></span><span class="topic_profile"></span><span class="response_info"></span></span>
+                </button>
             </li>
         </ul>
     </div>

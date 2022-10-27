@@ -24,14 +24,14 @@ let topics = [
         "id":"T1666838655621",
         "user_id": 1666801681673,
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.",
-        "responses": ["R1666838880315", "R1666838890083"],
+        "responses": [],
         "created_at": "01/01/2022"
     },
     {
         "id":"T1666838967363",
         "user_id": 1666801679810,
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.",
-        "responses": ["R1666838880315", "R1666838890083", "R1666840702976", "R1666840723287"],
+        "responses": [],
         "created_at": "01/02/2022"
     }
 ]
@@ -43,7 +43,8 @@ window.onload = function() {
     let signup_form                 = document.querySelector("#signup_form");
     let login_form                  = document.querySelector("#login_form");
     let forum_post_form             = document.querySelector("#forum_post_form");
-
+    let close_modal_btn             = document.querySelector("#close_modal_btn");
+    
     /* To switch to login dashboard */
     login_btn.onclick = toLogIn.bind(login_btn);
 
@@ -64,6 +65,8 @@ window.onload = function() {
 
     /* To post a topic */
     forum_post_form.onsubmit = toPostTopic.bind(forum_post_form);
+
+    close_modal_btn.onclick = toCloseForumModal.bind(close_modal_btn);
 
     /* To display all forums on load*/
     diplayAllForumTopics();
@@ -324,9 +327,9 @@ function toPostTopic(event) {
         let topic_content                   = topic_textarea.value;
         let user_first_name                 = users[login_user_index].first_name;
         let user_last_name                  = users[login_user_index].last_name;
-        let created_at                       = new Date().toLocaleDateString();
+        let created_at                      = new Date().toLocaleDateString();
         let topic_id                        = "T" + Date.now();
-        let user_full_name              = user_first_name + " " + user_last_name;
+        let user_full_name                  = user_first_name + " " + user_last_name;
     
         /* To clone topic template */
         let forum_topic_item_clone          = forum_topic_item.cloneNode(true);
@@ -344,5 +347,23 @@ function toPostTopic(event) {
         /*To reset forum post form*/
         this.reset();
         topic_textarea.setAttribute("class", "");
+
+        /* To add button listener */
+        // addShowModalListener();
     }
+}
+
+function toShowForumModal(event) {
+    let forum_modal = document.querySelector("#forum_modal");
+    forum_modal.setAttribute("class", "");
+}
+
+function toCloseForumModal(event) {
+    let forum_modal = document.querySelector("#forum_modal");
+    forum_modal.setAttribute("class", "hidden");
+}
+
+function addShowModalListener() {
+    let open_topic_btn = document.querySelectorAll(".open_topic_btn");
+    console.log(open_topic_btn);
 }

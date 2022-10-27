@@ -334,24 +334,33 @@ body {
                     border-radius: 10px;
                     display: block;
                     margin-bottom: 5px;
-                    padding: 22px 20px 20px 20px;
+                    padding: 0px;
                     position: relative;
                     transition: 0.21s;
                     width: 100%;
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        padding: 22px 20px 20px 20px;
+                        text-align: left;
+                        position: relative;
+                        cursor: pointer;
+                        width: 100%;
+                        &::before {
+                            background-image: url("../images/forum_icon.svg");
+                            content: "";
+                            display: inline-block;
+                            height: 27px;
+                            left: 20px;
+                            position: absolute;
+                            vertical-align: top;
+                            width: 35px;
+                        }
+                    }
                     &:last-child {
                         margin-bottom: 0px;
                     }
                     cursor: pointer;
-                    &::before {
-                        background-image: url("../images/forum_icon.svg");
-                        content: "";
-                        display: inline-block;
-                        height: 27px;
-                        left: 20px;
-                        position: absolute;
-                        vertical-align: top;
-                        width: 35px;
-                    }
                     p {
                         color: @white;
                         font: 16px/25px robotoItalic, sans-serif;
@@ -465,6 +474,25 @@ body {
             overflow-y: scroll;
             padding: 40px 84px 40px 84px;
             width: 1066px;
+            position: relative;
+            #close_modal_btn {
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                vertical-align: top;
+                background-image: url("../images/close_btn.svg");
+                background-color: transparent;
+                border: none;
+                opacity: 0.5;
+                transition: 0.21s;
+                cursor: pointer;
+                position: absolute;
+                top: 40px;
+                right: 40px;
+                &:hover {
+                    opacity: 1;
+                }
+            }
             h2 {
                 color: @white;
                 font: 22px/31px robotoMediumItalic, sans-serif;
