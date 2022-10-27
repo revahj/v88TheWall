@@ -58,36 +58,11 @@
                 <p>Welcome to V88 Forum Dashboard</p>
                 <form action="submit" id="forum_post_form" class="post_form">
                     <span class="login_profile_initials">JG</span>
-                    <textarea name="response_textarea" id="response_textarea" placeholder="Post your topic..."></textarea>
+                    <textarea name="topic_textarea" id="topic_textarea" placeholder="Post your topic..."></textarea>
                     <button type="submit">Post</button>
                 </form>
                 <h3>Recent Forums</h3>
-                <ul id="forum_topic_list">
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                    <li class="forum_topic_item">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p> 
-                        <span class="forum_info"><span class="profile_initial">JG</span><span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span><span class="response_info">Responses(10)</span></span>
-                    </li>
-                </ul>
+                <ul id="forum_topic_list"></ul>
             </div>
         </div>
         <div id="forum_modal" class="hidden">
@@ -142,6 +117,12 @@
                 </ul>
             </div>
         </div>
+        <ul id="clone_container" class="hidden">
+            <li class="forum_topic_item">
+                <p></p> 
+                <span class="forum_info"><span class="profile_initial"></span><span class="topic_profile"></span><span class="response_info"></span></span>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
