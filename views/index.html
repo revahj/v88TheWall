@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wall - Signup Page</title>
+    <title>The Wall | Village 88 (Signup)</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="../assets/js/forum.js"></script>
+    <script src="../assets/js/signup_login.js"></script>
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" data-page="signup"> 
+        <button id="jhaver"></button>
         <div id="signup_container" class="signup_login_container">
             <h2>Welcome</h2>
             <h3>Register a new account.</h3>
@@ -27,6 +28,7 @@
                 <label for="password_input">Password</label>
                 <input type="password" id="password_input" class="signup_input">
                 <button type="submit" id="submit_signup"><img src="../assets/images/loading.gif" alt="loading"><span class="signup_processing">Signup</span></button>
+                <a href="forum_dashboard.html" id="forum_dashboard_link" class="hidden">Forum Dashboard</a>
             </form>
             <p>Already have an account? <button class="login_btn">Login</button></p>
             <img class="the_wall_logo" src="../assets/images/the_wall_logo.svg" alt="The Wall logo">
@@ -44,59 +46,6 @@
             <p>Don't have an account? <button class="signup_btn">Sign up</button></p>
             <img class="the_wall_logo" src="../assets/images/the_wall_logo.svg" alt="The Wall logo">
         </div>
-        <div id="forum_dashboard" class="hidden">
-            <header>
-                <img src="../assets/images/the_wall_logo_small.svg" alt="The Wall logo">
-                <button id="profile_dropdown">
-                    <span class="login_profile_initials">JG</span>
-                    <span class="profile_name">Jhaver Gurtiza</span>
-                </button>
-                <button id="logout_btn" class="">Logout</button>
-            </header>
-            <div id="forum_content_container">
-                <h2>Goodmorning <span class="profile_greeting">Jhaver,</span></h2>
-                <p>Welcome to V88 Forum Dashboard</p>
-                <form id="forum_post_form" class="post_form">
-                    <span class="login_profile_initials">JG</span>
-                    <textarea name="topic_textarea" id="topic_textarea" placeholder="Post your topic..."></textarea>
-                    <button type="submit">Post</button>
-                </form>
-                <h3>Recent Forums</h3>
-                <ul id="forum_topic_list"></ul>
-            </div>
-        </div>
-        <div id="forum_modal" class="hidden">
-            <div class="forum_modal_content">
-                <button id="close_modal_btn"></button>
-                <span class="forum_info">
-                    <span class="profile_initial">JG</span>
-                    <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                </span>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</h2>
-                <form id="response_form" class="post_form">
-                    <span class="login_profile_initials">JG</span>
-                    <textarea name="response_textarea" id="response_textarea" placeholder="Post your topic..."></textarea>
-                    <button type="submit" id="submit_response_form">Post</button>
-                </form>
-                <h3>Responses (10)</h3>
-                <ul id="forum_reponse_list"></ul>
-            </div>
-        </div>
-        <ul id="clone_container" class="hidden">
-            <li class="forum_topic_item">
-                <button type="button" class="open_topic_btn" onclick="toShowForumModal(this.id)">
-                    <p></p> 
-                    <span class="forum_info"><span class="profile_initial"></span><span class="topic_profile"></span><span class="response_info"></span></span>
-                </button>
-            </li>
-            <li class="forum_reponse_item">
-                <span class="response_info">
-                    <span class="profile_initial">JG</span>
-                    <span class="topic_profile">Jhaver Gurtiza (Jan 1, 2022)</span>
-                </span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum nec feugiat massa adipiscing. Sit at placerat nisi, sed lorem porttitor nulla aliquam fermentum. Mi curabitur consequat congue consectetur erat sed.</p>
-            </li>
-        </ul>
     </div>
 </body>
 </html>

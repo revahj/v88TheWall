@@ -210,12 +210,7 @@ body {
   top: 75px;
   z-index: 2;
 }
-#wrapper #forum_dashboard {
-  display: block;
-  padding-top: 120px;
-  transition: 0.21s;
-}
-#wrapper #forum_dashboard header {
+#wrapper header {
   background-color: #1E1F25;
   display: block;
   height: 60px;
@@ -225,10 +220,10 @@ body {
   width: 100%;
   z-index: 3;
 }
-#wrapper #forum_dashboard header img {
+#wrapper header img {
   margin: 16px 0px 0px 20px;
 }
-#wrapper #forum_dashboard header #profile_dropdown {
+#wrapper header #profile_dropdown {
   background-color: transparent;
   border: none;
   color: #ffffff;
@@ -239,10 +234,10 @@ body {
   right: 26px;
   transition: 0.21s;
 }
-#wrapper #forum_dashboard header #profile_dropdown:hover {
+#wrapper header #profile_dropdown:hover {
   opacity: 0.8;
 }
-#wrapper #forum_dashboard header #profile_dropdown .login_profile_initials {
+#wrapper header #profile_dropdown .login_profile_initials {
   background-color: #85eb7e;
   border-radius: 50%;
   color: #1E1F25;
@@ -255,16 +250,16 @@ body {
   vertical-align: top;
   width: 26px;
 }
-#wrapper #forum_dashboard header #profile_dropdown span:nth-child(2) {
+#wrapper header #profile_dropdown span:nth-child(2) {
   display: inline-block;
   margin-top: 7px;
   text-transform: capitalize;
   vertical-align: top;
 }
-#wrapper #forum_dashboard header .show_logout_btn {
+#wrapper header .show_logout_btn {
   top: 51px !important;
 }
-#wrapper #forum_dashboard header #logout_btn {
+#wrapper header #logout_btn {
   background-color: #444551;
   border-radius: 10px;
   border: none;
@@ -279,7 +274,7 @@ body {
   vertical-align: top;
   width: 135px;
 }
-#wrapper #forum_dashboard header #logout_btn::before {
+#wrapper header #logout_btn::before {
   background-image: url("../images/logout_icon.svg");
   content: "";
   display: inline-block;
@@ -288,36 +283,38 @@ body {
   vertical-align: top;
   width: 18px;
 }
-#wrapper #forum_dashboard #forum_content_container {
+#wrapper #forum_dashboard {
+  padding-top: 120px;
+  transition: 0.21s;
   display: block;
   margin-bottom: 60px;
   margin: 0px auto;
   vertical-align: top;
   width: 978px;
 }
-#wrapper #forum_dashboard #forum_content_container > h2 {
+#wrapper #forum_dashboard > h2 {
   color: #ffffff;
   font: 21px/21px robotoRegular, sans-serif;
   margin: 0px;
 }
-#wrapper #forum_dashboard #forum_content_container > h2 > span {
+#wrapper #forum_dashboard > h2 > span {
   text-transform: capitalize;
 }
-#wrapper #forum_dashboard #forum_content_container > p {
+#wrapper #forum_dashboard > p {
   color: #6d7186;
   font: 18px/20px robotoRegular, sans-serif;
   margin: 10px 0px 56px 0px;
 }
-#wrapper #forum_dashboard #forum_content_container h3 {
+#wrapper #forum_dashboard h3 {
   color: #ffffff;
   font: 16px/18px robotoRegular, sans-serif;
   margin: 58px 0px 17px 0px;
 }
-#wrapper #forum_dashboard #forum_content_container > ul {
+#wrapper #forum_dashboard > ul {
   list-style: none;
   padding: 0px;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li {
+#wrapper #forum_dashboard > ul > li {
   background-color: #1E1F25;
   border-radius: 10px;
   display: block;
@@ -328,7 +325,7 @@ body {
   width: 100%;
   cursor: pointer;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li button {
+#wrapper #forum_dashboard > ul > li button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -337,7 +334,7 @@ body {
   text-align: left;
   width: 100%;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li button::before {
+#wrapper #forum_dashboard > ul > li button::before {
   background-image: url("../images/forum_icon.svg");
   content: "";
   display: inline-block;
@@ -347,16 +344,16 @@ body {
   vertical-align: top;
   width: 35px;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li:last-child {
+#wrapper #forum_dashboard > ul > li:last-child {
   margin-bottom: 0px;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li p {
+#wrapper #forum_dashboard > ul > li p {
   color: #ffffff;
   font: 16px/25px robotoItalic, sans-serif;
   margin: 0px 0px 14px 0px;
   padding-left: 52px;
 }
-#wrapper #forum_dashboard #forum_content_container > ul > li:hover {
+#wrapper #forum_dashboard > ul > li:hover {
   background-color: #434349;
 }
 #wrapper .post_form {

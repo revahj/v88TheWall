@@ -222,154 +222,151 @@ body {
             z-index: 2;
         }
     }
+    header {
+        background-color: #1E1F25;
+        display: block;
+        height: 60px;
+        position: fixed;
+        top: 0px;
+        vertical-align: top;
+        width: 100%;
+        z-index: 3;
+        img {
+            margin: 16px 0px 0px 20px;
+        }
+        #profile_dropdown {
+            background-color: transparent;
+            border: none;
+            color: @white;
+            cursor: pointer;
+            font: 14px/16px robotoRegular, sans-serif;
+            padding: 17px 0px;
+            position: absolute;
+            right: 26px;
+            transition: 0.21s;
+            &:hover {
+                opacity: 0.8;
+            }
+            .login_profile_initials {
+                background-color: @green;
+                border-radius: 50%;
+                color: #1E1F25;
+                display: inline-block;
+                font: 11px/16px robotoMedium, sans-serif;
+                height: 26px;
+                margin-right: 6px;
+                padding: 6px 0px;
+                text-transform: uppercase;
+                vertical-align: top;
+                width: 26px;
+            }
+            span{
+                &:nth-child(2) {
+                    display: inline-block;
+                    margin-top: 7px;
+                    text-transform: capitalize;
+                    vertical-align: top;
+                }
+            }
+        }
+        .show_logout_btn {
+            top: 51px !important; 
+        }
+        #logout_btn {
+            background-color: #444551;
+            border-radius: 10px;
+            border: none;
+            color: @white;
+            cursor: pointer;
+            display: block;
+            height: 43px;
+            position: absolute;
+            right: 24px;
+            top: -51px;
+            transition: 0.5s;
+            vertical-align: top;
+            width: 135px;
+            &::before {
+                background-image: url("../images/logout_icon.svg");
+                content: "";
+                display: inline-block;
+                height: 18px;
+                margin-right: 10px;
+                vertical-align: top;
+                width: 18px;
+            }
+        }
+    }
     #forum_dashboard {
         display: block;
         padding-top: 120px;
         transition: 0.21s;
-        header {
-            background-color: #1E1F25;
-            display: block;
-            height: 60px;
-            position: fixed;
-            top: 0px;
-            vertical-align: top;
-            width: 100%;
-            z-index: 3;
-            img {
-                margin: 16px 0px 0px 20px;
-            }
-            #profile_dropdown {
-                background-color: transparent;
-                border: none;
-                color: @white;
-                cursor: pointer;
-                font: 14px/16px robotoRegular, sans-serif;
-                padding: 17px 0px;
-                position: absolute;
-                right: 26px;
-                transition: 0.21s;
-                &:hover {
-                    opacity: 0.8;
-                }
-                .login_profile_initials {
-                    background-color: @green;
-                    border-radius: 50%;
-                    color: #1E1F25;
-                    display: inline-block;
-                    font: 11px/16px robotoMedium, sans-serif;
-                    height: 26px;
-                    margin-right: 6px;
-                    padding: 6px 0px;
-                    text-transform: uppercase;
-                    vertical-align: top;
-                    width: 26px;
-                }
-                
-                span{
-                    &:nth-child(2) {
-                        display: inline-block;
-                        margin-top: 7px;
-                        text-transform: capitalize;
-                        vertical-align: top;
-                    }
-                }
-            }
-            .show_logout_btn {
-                top: 51px !important; 
-            }
-            #logout_btn {
-                background-color: #444551;
-                border-radius: 10px;
-                border: none;
-                color: @white;
-                cursor: pointer;
-                display: block;
-                height: 43px;
-                position: absolute;
-                right: 24px;
-                top: -51px;
-                transition: 0.5s;
-                vertical-align: top;
-                width: 135px;
-                &::before {
-                    background-image: url("../images/logout_icon.svg");
-                    content: "";
-                    display: inline-block;
-                    height: 18px;
-                    margin-right: 10px;
-                    vertical-align: top;
-                    width: 18px;
-                }
-            }
-        }
-        #forum_content_container {
-            display: block;
+        display: block;
             margin-bottom: 60px;
             margin: 0px auto;
             vertical-align: top;
             width: 978px;
-            >h2 {
-                color: @white;
-                font: 21px/21px robotoRegular, sans-serif;
-                margin: 0px;
-                >span {
-                    text-transform: capitalize;
-                }
+        >h2 {
+            color: @white;
+            font: 21px/21px robotoRegular, sans-serif;
+            margin: 0px;
+            >span {
+                text-transform: capitalize;
             }
-            >p {
-                color: @font;
-                font: 18px/20px robotoRegular, sans-serif;
-                margin: 10px 0px 56px 0px;
-            }
-            h3 {
-                color: @white;
-                font: 16px/18px robotoRegular, sans-serif;
-                margin: 58px 0px 17px 0px;
-            }
-            >ul {
-                list-style: none;
+        }
+        >p {
+            color: @font;
+            font: 18px/20px robotoRegular, sans-serif;
+            margin: 10px 0px 56px 0px;
+        }
+        h3 {
+            color: @white;
+            font: 16px/18px robotoRegular, sans-serif;
+            margin: 58px 0px 17px 0px;
+        }
+        >ul {
+            list-style: none;
+            padding: 0px;
+            >li {
+                background-color: #1E1F25;
+                border-radius: 10px;
+                display: block;
+                margin-bottom: 5px;
                 padding: 0px;
-                >li {
-                    background-color: #1E1F25;
-                    border-radius: 10px;
-                    display: block;
-                    margin-bottom: 5px;
-                    padding: 0px;
-                    position: relative;
-                    transition: 0.21s;
-                    width: 100%;
-                    button {
-                        background-color: transparent;
-                        border: none;
-                        cursor: pointer;
-                        padding: 22px 20px 20px 20px;
-                        position: relative;
-                        text-align: left;
-                        width: 100%;
-                        &::before {
-                            background-image: url("../images/forum_icon.svg");
-                            content: "";
-                            display: inline-block;
-                            height: 27px;
-                            left: 20px;
-                            position: absolute;
-                            vertical-align: top;
-                            width: 35px;
-                        }
-                    }
-                    &:last-child {
-                        margin-bottom: 0px;
-                    }
+                position: relative;
+                transition: 0.21s;
+                width: 100%;
+                button {
+                    background-color: transparent;
+                    border: none;
                     cursor: pointer;
-                    p {
-                        color: @white;
-                        font: 16px/25px robotoItalic, sans-serif;
-                        margin: 0px 0px 14px 0px;
-                        padding-left: 52px;
+                    padding: 22px 20px 20px 20px;
+                    position: relative;
+                    text-align: left;
+                    width: 100%;
+                    &::before {
+                        background-image: url("../images/forum_icon.svg");
+                        content: "";
+                        display: inline-block;
+                        height: 27px;
+                        left: 20px;
+                        position: absolute;
+                        vertical-align: top;
+                        width: 35px;
                     }
-                    &:hover {
-                        background-color: #434349;
-                    }
+                }
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                cursor: pointer;
+                p {
+                    color: @white;
+                    font: 16px/25px robotoItalic, sans-serif;
+                    margin: 0px 0px 14px 0px;
+                    padding-left: 52px;
+                }
+                &:hover {
+                    background-color: #434349;
                 }
             }
         }
