@@ -76,6 +76,7 @@ window.onload = function() {
     let login_form                  = document.querySelector("#login_form");
     let forum_post_form             = document.querySelector("#forum_post_form");
     let close_modal_btn             = document.querySelector("#close_modal_btn");
+    let response_form               = document.querySelector("#response_form");
     
     /* To switch to login dashboard */
     login_btn.onclick = toLogIn.bind(login_btn);
@@ -103,6 +104,9 @@ window.onload = function() {
 
     /* To display all forums on load*/
     diplayAllForumTopics();
+
+    response_form.onsubmit = toPostResponse.bind(response_form);
+
 }
 
 
@@ -353,24 +357,22 @@ function toPostTopic(event) {
         topic_textarea.setAttribute("class", "validation_error");
     }
     else {
-        let login_user_index                = users.findIndex(item=> item.is_login === true);
+        toGetLoginUserData();
+
         let clone_container                 = document.querySelector("#clone_container");
         let forum_topic_item                = clone_container.querySelector(".forum_topic_item");
         let forum_topic_list                = document.querySelector("#forum_topic_list");
         let topic_content                   = topic_textarea.value;
-        let user_first_name                 = users[login_user_index].first_name;
-        let user_last_name                  = users[login_user_index].last_name;
         let created_at                      = new Date().toLocaleDateString();
         let topic_id                        = "T" + Date.now();
-        let user_full_name                  = user_first_name + " " + user_last_name;
     
         /* To clone topic template */
         let forum_topic_item_clone          = forum_topic_item.cloneNode(true);
     
         /* To display topic data */
         forum_topic_item_clone.querySelector("button").setAttribute("id", topic_id);
-        forum_topic_item_clone.querySelector(".profile_initial").textContent= user_first_name.charAt(0) + user_last_name.charAt(0);
-        forum_topic_item_clone.querySelector(".topic_profile").textContent = user_full_name + " (" + created_at + ") ";
+        forum_topic_item_clone.querySelector(".profile_initial").textContent= is_login_user_first_name.charAt(0) + is_login_user_last_name.charAt(0);
+        forum_topic_item_clone.querySelector(".topic_profile").textContent = is_login_user_first_name + " " + is_login_user_last_name + " (" + created_at + ") ";
         forum_topic_item_clone.querySelector(".response_info").textContent = "0 Responses";
         forum_topic_item_clone.querySelector("p").textContent = topic_content;
     
@@ -384,7 +386,7 @@ function toPostTopic(event) {
         /* To add new topic data */
         let new_topic                       = {};
         new_topic["id"]                     = topic_id;
-        new_topic["user_id"]                = users[login_user_index].id;
+        new_topic["user_id"]                = is_login_user_id;
         new_topic["content"]                = topic_content;
         new_topic["responses"]              = [];
         new_topic["created_at"]             = created_at;
@@ -417,7 +419,7 @@ function toShowForumModal(clicked_id) {
 
     /* To get topic data */
     let topic_id                            = clicked_id;
-    let topic_index                         = topics.findIndex(item=> item.id === clicked_id);
+    let topic_index                         = topics.findIndex(item=> item.id === topic_id);
     let topic_user_id                       = topics[topic_index].user_id;
     let topic_content                       = topics[topic_index].content;
     let topic_created_at                    = topics[topic_index].created_at;
@@ -445,17 +447,87 @@ function toShowForumModal(clicked_id) {
         let response_index                  = responses.findIndex(item=> item.id === response_id);
         let response_user_id                = responses[response_index].user_id;
         let response_content                = responses[response_index].content;
-        let response_responses              = responses[response_index].responses;
         let response_created_at             = responses[response_index].created_at;
         let response_user_index             = users.findIndex(item=> item.id === parseInt(response_user_id));
         let response_user_first_name        = users[response_user_index].first_name;
         let response_user_last_name         = users[response_user_index].last_name;
         let response_user_initials          = response_user_first_name.charAt(0) + response_user_last_name.charAt(0);
 
+        /* To display response data */
         forum_reponse_item_clone.querySelector(".profile_initial").textContent = response_user_initials;
         forum_reponse_item_clone.querySelector(".topic_profile").textContent = response_user_first_name + " " + response_user_last_name + " (" + response_created_at + ")";
         forum_reponse_item_clone.querySelector("p").textContent = response_content;
-        
-        forum_reponse_list.insertBefore(forum_reponse_item_clone, forum_reponse_list.children[0]);
+        forum_modal.setAttribute("data-topic-id", topic_id);
+
+        /* To prepend response */
+        forum_reponse_list.appendChild(forum_reponse_item_clone);
     }
+}
+
+/**
+* DOCU: To post a response
+* Triggered: on ubmit to response form
+* Last Updated Date: October 28, 2022
+* @author Jhaver
+*/
+function toPostResponse(event) {
+    event.preventDefault();
+    
+    let response_textarea = this.querySelector("#response_textarea");
+
+    // console.log(response_textarea.value);
+
+    /* To validate response form */
+    if (response_textarea.value == "") {
+        response_textarea.setAttribute("class", "validation_error");
+    }
+    else {
+        
+        toGetLoginUserData();
+        let forum_reponse_item_clone    = document.querySelector("#clone_container").querySelector(".forum_reponse_item").cloneNode(true);
+        let forum_reponse_list          = document.querySelector("#forum_reponse_list");
+
+        /* To display the new response */
+        forum_reponse_item_clone.querySelector(".profile_initial").textContent = is_login_user_first_name.charAt(0) + is_login_user_last_name.charAt(0);
+        forum_reponse_item_clone.querySelector(".topic_profile").textContent = is_login_user_first_name + " " + is_login_user_last_name + " (" + new Date().toLocaleDateString() + ")";
+        forum_reponse_item_clone.querySelector("p").textContent = response_textarea.value;
+
+        
+
+        forum_reponse_list.appendChild(forum_reponse_item_clone);
+
+
+
+        /* To push response data */
+        let new_response = {};
+        let new_response_id = "R" + Date.now()
+        new_response["id"] = new_response_id;
+        new_response["user_id"] = is_login_user_id;
+        new_response["content"] = response_textarea.value;
+        new_response["responses"] = [];
+        new_response["created_at"] = new Date().toLocaleDateString();
+        responses.push(new_response);
+
+        let data_topic_id = document.querySelector("#forum_modal").getAttribute("data-topic-id");
+        let data_topic_index = topics.findIndex(item=> item.id === data_topic_id);
+        topics[data_topic_index].responses.push(new_response_id);
+        document.querySelector("#forum_modal").querySelector("h3").textContent = "Responses (" + topics[data_topic_index].responses.length + ")";
+
+        /* To reset the reponse form */
+        response_textarea.setAttribute("class", "");
+        this.reset();
+    }
+}
+
+/**
+* DOCU: To get data of login user
+* Triggered: On posting a topic and response
+* Last Updated Date: October 28, 2022
+* @author Jhaver
+*/
+function toGetLoginUserData() {
+    let is_login_user_index      = users.findIndex(item=> item.is_login === true);
+    is_login_user_first_name     = users[is_login_user_index].first_name;
+    is_login_user_last_name      = users[is_login_user_index].last_name;
+    is_login_user_id             = users[is_login_user_index].id;
 }
