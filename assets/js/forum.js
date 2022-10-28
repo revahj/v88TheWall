@@ -36,6 +36,7 @@ let topics = [
     }
 ]
 
+/* Responses data */
 let responses = [
     {
         "id": "R1666880797718",
